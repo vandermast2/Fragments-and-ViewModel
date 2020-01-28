@@ -1,13 +1,17 @@
-package com.example.fragmentsandviewmodel;
+package com.example.fragmentsandviewmodel.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.example.fragmentsandviewmodel.R;
+import com.example.fragmentsandviewmodel.ui.fragments.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //initialize MainViewModel
         mainViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainViewModel.class);
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+//        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         txtText =findViewById(R.id.txtText);
         mainViewModel.getCount("Some Text");
         mainViewModel.count.observe(this, new Observer<Integer>() {
@@ -30,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Log.d("Lifecycle", "onCreate");
+        addFragment();
+    }
+
+    private void addFragment(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        MainFragment mainFragment = new MainFragment();
+         fragmentTransaction.add(R.id.mainContainer, mainFragment,"MAIN_FRAGMENT");
+         fragmentTransaction.commit();
     }
 
     private void setText(int count){
