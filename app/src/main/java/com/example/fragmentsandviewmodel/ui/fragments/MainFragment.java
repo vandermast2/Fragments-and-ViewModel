@@ -1,21 +1,17 @@
 package com.example.fragmentsandviewmodel.ui.fragments;
 
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.example.fragmentsandviewmodel.R;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends BaseFragment {
     private MainViewModel viewModel;
 
     @Override
@@ -28,6 +24,11 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+    }
 
+
+    @Override
+    public String getTitle() {
+        return "BlueFragment";
     }
 }
