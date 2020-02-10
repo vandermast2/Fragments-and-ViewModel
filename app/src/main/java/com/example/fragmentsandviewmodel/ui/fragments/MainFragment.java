@@ -16,6 +16,7 @@ import com.example.fragmentsandviewmodel.ui.adapters.ReciepeAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MainFragment extends BaseFragment {
     private RecyclerView rvReceipe;
@@ -32,7 +33,7 @@ public class MainFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         rvReceipe = view.findViewById(R.id.rvReceipe);
-        ArrayList receipes = (ArrayList) Arrays.asList(
+        List receipes = Arrays.asList(
                 new Reciepe("slkgfv", "skjldavc"),
                 new Reciepe("sKLJDBV", "lSAIVdj"),
                 new Reciepe("lskjvdh", "lakjsbvhd"),

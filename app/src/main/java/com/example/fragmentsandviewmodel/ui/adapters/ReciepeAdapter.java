@@ -11,11 +11,12 @@ import com.example.fragmentsandviewmodel.R;
 import com.example.fragmentsandviewmodel.models.Reciepe;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReciepeAdapter extends RecyclerView.Adapter<ReciepeViewHolder> {
-    private ArrayList<Reciepe> reciepes;
+    private List<Reciepe> reciepes;
 
-    public ReciepeAdapter(ArrayList<Reciepe> reciepes) {
+    public ReciepeAdapter(List reciepes) {
         this.reciepes = reciepes;
     }
 
