@@ -8,10 +8,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fragmentsandviewmodel.R;
+import com.example.fragmentsandviewmodel.models.Reciepe;
+import com.example.fragmentsandviewmodel.ui.adapters.ReciepeAdapter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainFragment extends BaseFragment {
+    private RecyclerView rvReceipe;
     private MainViewModel viewModel;
 
     @Override
@@ -24,6 +31,16 @@ public class MainFragment extends BaseFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        rvReceipe = view.findViewById(R.id.rvReceipe);
+        ArrayList receipes = (ArrayList) Arrays.asList(
+                new Reciepe("slkgfv", "skjldavc"),
+                new Reciepe("sKLJDBV", "lSAIVdj"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("laskjdnc", ";lkasjvdn")
+                );
+        ReciepeAdapter adapter = new ReciepeAdapter(receipes);
+        rvReceipe.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
 
