@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fragmentsandviewmodel.R;
@@ -33,9 +34,35 @@ public class MainFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         rvReceipe = view.findViewById(R.id.rvReceipe);
-        List receipes = Arrays.asList(
+        rvReceipe.setLayoutManager(new LinearLayoutManager(getContext()));
+        List<Reciepe> receipes = Arrays.asList(
                 new Reciepe("slkgfv", "skjldavc"),
                 new Reciepe("sKLJDBV", "lSAIVdj"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
+                new Reciepe("lskjvdh", "lakjsbvhd"),
                 new Reciepe("lskjvdh", "lakjsbvhd"),
                 new Reciepe("laskjdnc", ";lkasjvdn")
                 );
