@@ -9,14 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fragmentsandviewmodel.R;
 import com.example.fragmentsandviewmodel.models.Reciepe;
+import com.example.fragmentsandviewmodel.models.Result;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReciepeAdapter extends RecyclerView.Adapter<ReciepeViewHolder> {
-    private List<Reciepe> reciepes;
+    private List<Result> reciepes;
 
-    public ReciepeAdapter(List reciepes) {
+    public ReciepeAdapter(List<Result> reciepes) {
         this.reciepes = reciepes;
     }
 

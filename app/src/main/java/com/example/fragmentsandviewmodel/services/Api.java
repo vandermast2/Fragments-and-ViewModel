@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface Api {
-    @GET("/")
+    @GET("api/")
     public Call<Reciepe> getRecipe();
 }

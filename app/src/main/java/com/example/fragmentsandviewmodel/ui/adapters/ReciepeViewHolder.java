@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fragmentsandviewmodel.R;
 import com.example.fragmentsandviewmodel.models.Reciepe;
+import com.example.fragmentsandviewmodel.models.Result;
 
 public class ReciepeViewHolder extends RecyclerView.ViewHolder {
     private TextView txtTitle;
@@ -19,8 +20,8 @@ public class ReciepeViewHolder extends RecyclerView.ViewHolder {
         txtMsg = itemView.findViewById(R.id.txtMsg);
     }
 
-    public void onBind(Reciepe reciepe){
+    public void onBind(Result reciepe){
         txtTitle.setText(reciepe.getTitle());
-        txtMsg.setText(reciepe.getMsg());
+        txtMsg.setText(reciepe.getIngredients());
     }
 }
